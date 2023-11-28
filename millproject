@@ -1,0 +1,59 @@
+# Pcb2GCode settings
+metric=true
+metricoutput=true
+zero-start=true
+zsafe=1
+zchange=5
+software=custom
+spinup-time=0s
+spindown-time=0s
+mirror-axis=1 # Mirror the design to X. Required for the back side...
+# voronoi=1
+
+# Milling
+zwork=-0.07mm
+mill-feed=1000
+# mill-feed=180
+mill-infeed=0.125mm
+mill-speed=12000
+mill-diameters=0.30mm # pcb_mill_calc.py said 0.315
+milling-overlap=10%
+isolation-width=0.55mm
+
+# Drilling
+zdrill=-1.7
+zmilldrill=-1.7
+drill-side=back
+drill-feed=100
+drill-speed=12000
+drills-available=0.3mm,0.4mm,0.5mm,0.6mm,0.7mm,0.8mm,0.9mm,1.0mm,1.1mm
+milldrill-diameter=1.0mm
+min-milldrill-hole-diameter=1.0mm
+
+# Outline
+zcut=-1.7
+cut-side=back
+cut-feed=150
+cut-vertfeed=50
+cut-speed=12000
+cut-infeed=0.5
+cutter-diameter=1.0mm
+bridges=4
+bridgesnum=2
+zbridges=-1.2
+
+# Autolevel
+# al-front=true
+# al-back=true
+# al-x=10
+# al-y=10
+# al-probefeed=20
+# al-probecode=G38.2
+# al-setzzero=G10 L20 P0 Z0
+
+
+# G64 is not supported by GRBL
+nog64=true
+# https://github.com/gnea/grbl/issues/290
+nog81=true
+nog91-1=true
